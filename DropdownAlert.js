@@ -449,14 +449,14 @@ export default class DropdownAlert extends Component {
       return this.props.renderTitle(this.props, this.alertData);
     }
     const { titleTextProps, titleStyle, titleNumOfLines } = this.props;
-    return <TextView allowfontscaling={false} {...titleTextProps} style={StyleSheet.flatten(titleStyle)} numberOfLines={titleNumOfLines} text={this.alertData.title} />;
+    return <TextView maxFontSizeMultiplier={1} {...titleTextProps} style={StyleSheet.flatten(titleStyle)} numberOfLines={titleNumOfLines} text={this.alertData.title} />;
   }
   _renderMessage() {
     if (this.props.renderMessage) {
       return this.props.renderMessage(this.props, this.alertData);
     }
     const { messageTextProps, messageStyle, messageNumOfLines } = this.props;
-    return <TextView allowfontscaling={false} {...messageTextProps} style={StyleSheet.flatten(messageStyle)} numberOfLines={messageNumOfLines} text={this.alertData.message} />;
+    return <TextView maxFontSizeMultiplier={1} {...messageTextProps} style={StyleSheet.flatten(messageStyle)} numberOfLines={messageNumOfLines} text={this.alertData.message} />;
   }
   _renderCancel(show = false) {
     if (!show) {
